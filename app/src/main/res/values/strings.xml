@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">EmployeeDataBase</string>
+    <string name="user_s_profile_picture">User\'s profile picture</string>
+    <string name="full_time">Full Time</string>
+    <string name="part_time">Part Time</string>
+    <string name="all">All</string>
+    <string name="contractor">Contractor</string>
+    <string name="no_name_found">No Name Found</string>
+    <string name="load_malformed_data">Load Malformed Data</string>
+    <string name="load_empty_state">Load Empty State</string>
+    <string name="load_normal_data">Load Normal Data</string>
+    <string name="filter">Filter</string>
+    <string name="please_choose_an_option_to_filter_the_employee_data">Please choose an option to filter the employee
+        data
+    </string>
+    <string name="load_static_data">Load Static Data</string>
+    <string name="uh_oh_no_data_available_at_this_time">Uh oh! No data available at this time</string>
+</resources>

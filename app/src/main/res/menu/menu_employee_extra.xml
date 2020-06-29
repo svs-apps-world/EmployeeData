@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:title="@string/load_malformed_data" android:id="@+id/loadMalformedData"/>
+    <item android:title="@string/load_empty_state" android:id="@+id/loadEmptyState"/>
+    <item android:title="@string/load_normal_data" android:id="@+id/loadNormalData"/>
+    <item android:title="@string/load_static_data" android:id="@+id/loadStaticData"/>
+    <item android:title="@string/filter" android:id="@+id/filterData"
+          app:showAsAction="always" android:icon="@drawable/ic_filter_list_white_24dp"/>
+</menu>

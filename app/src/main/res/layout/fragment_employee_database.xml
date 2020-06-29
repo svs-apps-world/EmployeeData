@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:app="http://schemas.android.com/apk/res-auto"
+             android:orientation="vertical"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent">
+
+    <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/employeeDatabaseRecyclerView"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            android:background="@color/colorGrayBackground"
+            android:paddingTop="20dp"
+            android:clipToPadding="false"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    <FrameLayout android:id="@+id/fragmentEmployeeLoader"
+                 android:visibility="gone"
+                 android:layout_width="match_parent" android:layout_height="match_parent"
+                 android:background="@android:color/white">
+        <ProgressBar
+                android:layout_gravity="center"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+        />
+    </FrameLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/noDataFoundLayout"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="@android:color/white">
+        <ImageView android:layout_width="120dp" android:layout_height="120dp"
+                   android:layout_gravity="center"
+                   android:layout_weight="0.5"
+                   android:src="@drawable/head_profile" android:id="@+id/imageView"
+                   app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+                   app:layout_constraintTop_toTopOf="parent" android:layout_marginBottom="8dp"
+                   app:layout_constraintBottom_toTopOf="@+id/guideline" app:layout_constraintVertical_bias="1.0"/>
+        <androidx.constraintlayout.widget.Guideline
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                app:layout_constraintGuide_percent="0.5"
+                android:layout_height="wrap_content" android:id="@+id/guideline"/>
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                  android:layout_weight="0.5"
+                  android:gravity="center_horizontal"
+                  android:textSize="24sp"
+                  android:text="@string/uh_oh_no_data_available_at_this_time"
+                  app:layout_constraintBottom_toBottomOf="parent"
+                  android:id="@+id/textView"
+                  app:layout_constraintTop_toBottomOf="@+id/guideline" app:layout_constraintEnd_toEndOf="parent"
+                  app:layout_constraintStart_toStartOf="parent" app:layout_constraintVertical_bias="0.0"
+                  android:layout_marginLeft="32dp" android:layout_marginStart="32dp" android:layout_marginRight="32dp"
+                  android:layout_marginEnd="32dp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

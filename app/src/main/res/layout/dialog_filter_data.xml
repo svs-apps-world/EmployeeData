@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:background="@android:color/white"
+              android:padding="8dp">
+
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+              android:padding="8dp"
+              android:maxWidth="200dp"
+              android:layout_gravity="center"
+              android:gravity="center"
+              android:layout_margin="8dp"
+
+              android:text="@string/please_choose_an_option_to_filter_the_employee_data"/>
+
+    <RadioGroup
+            android:id="@+id/radioGroupForFilter"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:padding="10dp">
+        <RadioButton
+                android:text="@string/part_time"
+                android:textColor="@color/colorTextColorGray"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/showPartTimeEmp" android:layout_weight="1"/>
+        <RadioButton
+                android:text="@string/full_time"
+                android:textColor="@color/colorTextColorGray"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/showFullTimeEmp" android:layout_weight="1"/>
+        <RadioButton
+                android:textColor="@color/colorTextColorGray"
+                android:text="@string/contractor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/showContractorEmp" android:layout_weight="1"/>
+        <RadioButton
+                android:text="@string/all"
+                android:textColor="@color/colorTextColorGray"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/showAll" android:layout_weight="1"/>
+    </RadioGroup>
+
+    <Button android:layout_width="100dp" android:layout_height="wrap_content"
+            android:background="@drawable/bg_rounded_corner_purple"
+            android:textColor="@android:color/white"
+            android:id="@+id/filterButton"
+            android:layout_marginBottom="10dp"
+            android:layout_gravity="center"
+            android:text="@string/filter"/>
+</LinearLayout>
