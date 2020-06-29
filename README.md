@@ -32,3 +32,4 @@
 	Displaying all of the data of the employee in the List did not feel right so showed only highlights on the load. On clicking of the name of the Employee the card expands and shows up some extra data as well.
 
 ![](video-to-gif 13mb.gif)
+![Demo video](demoVideo.gif)
