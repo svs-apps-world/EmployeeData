@@ -7,7 +7,6 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.employeedatabase.R
 import com.example.employeedatabase.adapters.EmployeeAdapter
 import com.example.employeedatabase.viewmodels.EmployeeViewModel
@@ -40,6 +39,10 @@ class EmployeeFragment : Fragment() {
         }
     }
 
+    override fun onConfigurationChanged(newConfig: Configuration) {
+        super.onConfigurationChanged(newConfig)
+        setupRecyclerView()
+    }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         menu.clear()
@@ -102,7 +105,8 @@ class EmployeeFragment : Fragment() {
         } else {
             employeeDatabaseRecyclerView.layoutManager = GridLayoutManager(requireContext(), 2)
         }
-        employeeDatabaseRecyclerView.addItemDecoration(VerticalSpaceItemDecoration(resources.getDimensionPixelSize(R.dimen.vertical_space)))
+        if (employeeDatabaseRecyclerView.itemDecorationCount == 0)
+            employeeDatabaseRecyclerView.addItemDecoration(VerticalSpaceItemDecoration(resources.getDimensionPixelSize(R.dimen.vertical_space)))
         adapter = EmployeeAdapter(requireContext(), viewModel.employeeList)
         employeeDatabaseRecyclerView.adapter = adapter
     }
