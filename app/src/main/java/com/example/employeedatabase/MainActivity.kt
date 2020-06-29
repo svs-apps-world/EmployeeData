@@ -16,10 +16,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun addFragment(newInstance: Fragment, tag: String) {
-        for (aFrag in supportFragmentManager.fragments) {
-            supportFragmentManager.beginTransaction().remove(aFrag).commit()
-        }
-
         supportFragmentManager
             .beginTransaction()
             .add(R.id.fragmentContainer, newInstance, tag)

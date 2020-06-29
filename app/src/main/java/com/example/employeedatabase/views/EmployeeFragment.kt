@@ -42,6 +42,8 @@ class EmployeeFragment : Fragment() {
     override fun onConfigurationChanged(newConfig: Configuration) {
         super.onConfigurationChanged(newConfig)
         setupRecyclerView()
+        addObserverForEmployeeData()
+        addObserverForImageClick()
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
