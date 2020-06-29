@@ -30,3 +30,6 @@
 
 6. Anything else you want us to know
 	Displaying all of the data of the employee in the List did not feel right so showed only highlights on the load. On clicking of the name of the Employee the card expands and shows up some extra data as well.
+
+
+![Demo video](demoVideo.gif)
