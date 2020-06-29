@@ -12,7 +12,7 @@
 	Followed the MVVM architecture pattern for structuring the app. Made sure the app works fine on rotation without making duplicate calls. Handled a slight variation of design for landscape mode. 
 	Added menus to handle easy access of all formats of data.
 
-3.Copied-in code or copied-in dependencies
+3. Copied-in code or copied-in dependencies
 	Took some help from stackoverflow for adding gradle dependencies - it was after a long time that I started a project from scratch.
 	Downloaded icons from https://material.io/resources/icons/
 	Got some design ideas from https://dribbble.com/shots/7241189-Employee-Management-Mobile
