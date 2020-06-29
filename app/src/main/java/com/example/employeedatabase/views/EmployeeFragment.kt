@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.employeedatabase.R
 import com.example.employeedatabase.adapters.EmployeeAdapter
 import com.example.employeedatabase.viewmodels.EmployeeViewModel
@@ -41,6 +42,7 @@ class EmployeeFragment : Fragment() {
 
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        menu.clear()
         super.onCreateOptionsMenu(menu, inflater)
         inflater.inflate(R.menu.menu_employee_extra, menu)
     }
@@ -69,6 +71,7 @@ class EmployeeFragment : Fragment() {
                 viewModel.loadStaticData()
                 adapter.notifyDataSetChanged()
                 fragmentEmployeeLoader.visibility = View.GONE
+                noDataFoundLayout.visibility = View.GONE
                 return true
             }
             R.id.filterData -> {
@@ -102,7 +105,6 @@ class EmployeeFragment : Fragment() {
         employeeDatabaseRecyclerView.addItemDecoration(VerticalSpaceItemDecoration(resources.getDimensionPixelSize(R.dimen.vertical_space)))
         adapter = EmployeeAdapter(requireContext(), viewModel.employeeList)
         employeeDatabaseRecyclerView.adapter = adapter
-
     }
 
     private fun addObserverForEmployeeData() {

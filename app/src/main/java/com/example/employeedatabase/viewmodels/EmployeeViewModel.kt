@@ -3,7 +3,6 @@ package com.example.employeedatabase.viewmodels
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MediatorLiveData
-import com.example.employeedatabase.R
 import com.example.employeedatabase.models.Employee
 import com.example.employeedatabase.models.EmployeeData
 import com.example.employeedatabase.models.EmployeeType
@@ -77,19 +76,19 @@ class EmployeeViewModel(application: Application) : AndroidViewModel(application
             employeeListUnFiltered.addAll(employeeList)
     }
 
-    fun getFilteredData(selectedFilterId: Int): java.util.ArrayList<Employee> {
+    fun getFilteredData(selectedFilterId: String): java.util.ArrayList<Employee> {
         var filteredList = ArrayList<Employee>(employeeListUnFiltered)
         when (selectedFilterId) {
-            R.id.showFullTimeEmp -> {
+            EmployeeType.FULL_TIME.type -> {
                 filteredList = filteredList.filter {
                     it.employeeType == EmployeeType.FULL_TIME.type
                 } as ArrayList<Employee>
             }
-            R.id.showPartTimeEmp -> {
+            EmployeeType.PART_TIME.type -> {
                 filteredList =
                     filteredList.filter { it.employeeType == EmployeeType.PART_TIME.type } as ArrayList<Employee>
             }
-            R.id.showContractorEmp -> {
+            EmployeeType.CONTRACTOR.type -> {
                 filteredList =
                     filteredList.filter { it.employeeType == EmployeeType.CONTRACTOR.type } as ArrayList<Employee>
             }
@@ -273,6 +272,9 @@ class EmployeeViewModel(application: Application) : AndroidViewModel(application
                 "\t]\n" +
                 "}"
         val employeeData: EmployeeData = ObjectMapper().readValue(json, EmployeeData::class.java)
-        employeeData.employees?.let { employeeList.addAll(it) }
+        employeeData.employees?.let {
+            employeeList.clear()
+            employeeList.addAll(it)
+        }
     }
 }

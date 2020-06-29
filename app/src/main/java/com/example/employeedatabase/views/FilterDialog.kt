@@ -9,13 +9,14 @@ import android.view.ViewGroup
 import android.view.Window
 import androidx.fragment.app.DialogFragment
 import com.example.employeedatabase.R
+import com.example.employeedatabase.models.EmployeeType
 import kotlinx.android.synthetic.main.dialog_filter_data.*
 
 class FilterDialog : DialogFragment() {
 
     private var onFilterButtonClickListener: (() -> Unit)? = null
 
-    var selectedFilterId = R.id.showAll
+    var selectedFilterId = ""
 
     companion object {
         const val TAG = "FilterDialog"
@@ -41,7 +42,13 @@ class FilterDialog : DialogFragment() {
 
         filterButton.setOnClickListener {
             if (onFilterButtonClickListener != null) {
-                selectedFilterId = radioGroupForFilter.checkedRadioButtonId
+                selectedFilterId = when (radioGroupForFilter.checkedRadioButtonId) {
+                    R.id.showPartTimeEmp -> EmployeeType.PART_TIME.type
+                    R.id.showFullTimeEmp -> EmployeeType.FULL_TIME.type
+                    R.id.showContractorEmp -> EmployeeType.CONTRACTOR.type
+                    else -> ""
+                }
+
                 onFilterButtonClickListener!!.invoke()
             } else {
                 dismiss()

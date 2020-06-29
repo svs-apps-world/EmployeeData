@@ -31,6 +31,6 @@ data class Employee(
 enum class EmployeeType(val type: String) {
     FULL_TIME("FULL_TIME"),
     PART_TIME("PART_TIME"),
-    CONTRACTOR("CONTRACTOR"),
+    CONTRACTOR("CONTRACTOR")
 }
 
